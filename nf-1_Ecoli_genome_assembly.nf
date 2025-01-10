@@ -169,7 +169,7 @@ process trimmomatic {
         ecoli_s788309_1.trimmomatic_paired.fq ecoli_s788309_1.trimmomatic_unpaired.fq \
         ecoli_s788309_2.trimmomatic_paired.fq ecoli_s788309_2.trimmomatic_unpaired.fq \
         ILLUMINACLIP:/lisc/app/trimmomatic/0.39/adapters/TruSeq3-PE.fa:2:30:10:2:True \
-        LEADING:3 TRAILING:3 SLIDINGWINDOW:30:20 MINLEN:90 -threads ${task.cpus}
+        LEADING:30 TRAILING:30 SLIDINGWINDOW:30:20 MINLEN:90 -threads ${task.cpus}
     """
 }
 
