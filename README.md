@@ -8,8 +8,8 @@
 
 FASTQ files were retrieved from Sequence Read Archive (SRA) by fasterq-dump (from the sratoolkit v3.1.1 suite) using the following accessions numbers:
 
-SRR15361790: paired-end data from Illumina HiSeq 2500.
-SRR17645346: long-read data from the MinION and base-called using Albacore. 
+- SRR15361790: paired-end data from Illumina HiSeq 2500.
+- SRR17645346: long-read data from the MinION and base-called using Albacore. 
 
 ## Processing of Illumina sequence data
 
