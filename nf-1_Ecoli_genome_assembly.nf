@@ -178,7 +178,7 @@ process trimmomatic {
 process assembly_illumina_only {
     executor = 'slurm'
     cpus = 4
-    time = { 30.min * task.attempt }
+    time = { 2.hour * task.attempt }
     memory = { 5.GB * task.attempt }
     errorStrategy = { 'retry' }
     maxRetries = 1
@@ -196,7 +196,7 @@ process assembly_illumina_only {
     script:
     """
     # Illumina-only assembly
-    spades.py -1 ${read1} -2 ${read2} -o spades_filtered_illumina-only --isolate -t ${task.cpus}
+    spades.py -1 ${read1} -2 ${read2} -o spades_filtered_illumina-only --isolate -t ${task.cpus} -k 21,33,55,65,77,83,91
     """
 }
 
@@ -233,7 +233,7 @@ process quast_illumina_only {
 process assembly_hybrid {
     executor = 'slurm'
     cpus = 4
-    time = { 30.min * task.attempt }
+    time = { 2.hour * task.attempt }
     memory = { 5.GB * task.attempt }
     errorStrategy = { 'retry' }
     maxRetries = 1
@@ -252,7 +252,7 @@ process assembly_hybrid {
     script:
     """
     # Hybrid assembly
-    spades.py -1 ${read1} -2 ${read2} --nanopore ${nanopore} -o spades_filtered_hybrid --isolate -t ${task.cpus}
+    spades.py -1 ${read1} -2 ${read2} --nanopore ${nanopore} -o spades_filtered_hybrid --isolate -t ${task.cpus} -k 21,33,55,65,77,83,91
     """
 }
 
